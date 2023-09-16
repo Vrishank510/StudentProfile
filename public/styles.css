@@ -1,0 +1,140 @@
+
+.header {
+    overflow: hidden;
+    background-color: white;
+    padding: 20px 10px;
+    width: 100%;
+    
+  }
+
+  #logout{
+    font-size: large;
+    color: white;
+    margin-right: 10px;
+    float: right;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+    
+}
+#studentProfile{
+    float: left;
+    text-align: center;
+    padding: 10px;
+}
+  @media screen and (max-width: 830px) {
+    .header{
+        text-align: center;
+        width: 850px;
+    }
+    #studentProfile {
+        float: none;
+        
+      }
+    #logout{
+        float: none;
+    }
+  }
+  
+
+
+
+.inp{
+    display: hidden;
+}
+
+.link{
+    text-decoration: none;
+    font-size: x-large;
+    color: rgb(253, 178, 2);
+}
+
+.container{
+    margin: 20px;
+    margin-left: 30px;
+    font-size: x-large;
+}
+
+.body-container{
+    
+    display: flex;
+    justify-content: center;
+
+}
+
+.box-container{
+    margin: 20px;
+    padding-inline: 10px;
+    background-color: white;
+    width: fit-content;
+    margin-left: 30px;
+    padding-right: 100px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .body-container{
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 60px;
+    }
+}
+
+.att-list{
+    list-style: none;
+}
+
+.li-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus-button{
+    border-style: none;
+    background-color: rgb(253, 178, 2);
+    font-size: x-large;
+    border-radius: 20%;
+    color: white;
+}
+
+.add-button{
+    margin-left: 10px;
+    border-style: none;
+    padding: 5px;
+    border-radius: 20%;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+
+#input{
+    font-size: large;
+    border-style: hidden;
+}
+
+.profile{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+    margin-right: 30px;
+}
+@media screen and (max-width: 560px) {
+    .profile{
+        border-radius: 10%;
+    }
+  }
+
+.profile-container{
+    display: flex;
+    align-items: center;
+}
+
+
+
+    

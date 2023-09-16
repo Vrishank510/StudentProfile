@@ -1,0 +1,100 @@
+<%- include('partials/header') %>
+<body style="background-color: rgb(238,238,238);">
+    
+    <div class="container">
+        <h1>
+            <% if(!locals.profile.image){ %>
+                <div class="profile-container" style="font-size: medium;">
+                    
+                    <div class="profile"   style="display: flex; justify-content: center; align-items: center; background-color: white; text-align: center;">
+                        
+                            <form action="/picture/<%=profile.username %>" method="post">
+                                <button style="background-color: white;border-style: none; font-size: x-large; ">Add Pic</button>
+                            </form>
+                        
+                        
+                    </div>
+                
+                    <div style="display: inline-block;">
+                        <h1><%=profile.name %></h1>
+                        <h2><%=profile.age %></h2>
+                        <h2><%=profile.username %></h2>
+                    </div>
+                    
+                </div>
+            <!--<form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" required>
+                <input class="inp" value="<%profile.username %>" name="inp">
+                <input type="submit">
+            </form> -->
+            <% } else { %>
+                <div class="profile-container" style="font-size: medium;">
+                    
+                    <img class="profile" src="/Images/<%=profile.image %>" style="display: inline-block;">
+                
+                    <div style="display: inline-block;">
+                        <h1><%= profile.name %></h1>
+                        <h2><%= profile.age %></h2>
+                        <h2><%= profile.username %></h2>
+                    </div>
+                    
+                </div>
+                
+                <% } %>
+        </h1>
+    </div>
+    <div class="body-container">
+
+    
+    <div class="box-container">
+        <h1>Classes Missed</h1>
+        <% if(subs.length === 0){%>
+            <h3>Enter your Subjects</h3>
+        <% } else{%>
+            <% for(var i = 0; i< subs.length;i++){ %>
+                <ul class="att-list">
+                    <form action="/add/<%=profile.username %>" method="post">
+                        <li>
+                            <div class="li-container">
+                                <p><%=subs[i].name%></p>
+                                <% if(subs[i].attendance <= subs[i].misses/3){ %>
+                                    <p style="color: green;"><%=subs[i].attendance %>/<%=subs[i].misses %></p>
+                                <% } else if(subs[i].attendance <= 2*subs[i].misses/3){ %>
+                                    <p style="color: orange;"><%=subs[i].attendance %>/<%=subs[i].misses %></p>
+                                <% } else if(subs[i].attendance <= subs[i].misses){ %>
+                                    <p style="color: red;"><%=subs[i].attendance %>/<%=subs[i].misses %></p>
+                                <% } else{ %>
+                                    <h4 style="color: red;">SHORTAGE</h4>
+                                <% } %>
+                                <button type="submit" name="addButton" class="plus-button" value="<%=subs[i].name %>">+</button>
+                            </div>
+                        </li>
+                    </form>
+                </ul>
+            <% } %>
+        <% } %>
+                <form action="/newsubject/<%=profile.username %>" method="post">
+                    <div class="li-container" style="justify-content: end; margin-bottom: 10px;">
+                    <input placeholder="Add subject" id="input" name="newSubject">
+                    <input placeholder="How many classes can you miss" id="input" name="newMisses">
+                    <button class="add-button" type="submit">add</button>
+                    </div>
+                </form>
+                        
+        
+    </div>
+
+    <div class="box-container">
+        <h1>Work I Have To Do</h1>
+        
+                        
+        
+    </div>
+    
+</div>
+<script>
+    function myFunction(){
+        console.log("hello");
+    }
+</script>
+</body>
